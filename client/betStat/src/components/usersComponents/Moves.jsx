@@ -17,9 +17,15 @@ export default function Moves(){
   <div>
     <label for="provider">Доставчик:</label>
     <select id="provider" name="provider">
-      <option value="provider1">Доставчик 1</option>
-      <option value="provider2">Доставчик 2</option>
-      <option value="provider3">Доставчик 3</option>
+      <option value="winbet">WinBet </option>
+      <option value="efbet">Efbet </option>
+      <option value="palmsbet">PalmsBet</option>
+      <option value="alphawin">AlphaWin</option>
+      <option value="8888">8888</option>
+      <option value="betano">Betano</option>
+      <option value="inbet">Inbet</option>
+      <option value="sesame">Sesame</option>
+      <option value="other">Друг</option>
     
     </select>
   </div>
