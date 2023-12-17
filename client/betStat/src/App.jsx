@@ -1,10 +1,13 @@
+import Navigation from "./components/Navigation";
 
 
 function App() {
   
 
   return (
-    <h1>LETS DANCE</h1>
+    <div id="page">
+   <Navigation />
+   </div>
   )
     
   

@@ -1,0 +1,28 @@
+
+nav {
+    background-color: #333;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  li {
+    margin: 0;
+  }
+  
+  a {
+    display: block;
+    padding: 1em 2em;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: #555;
+  }
+  
