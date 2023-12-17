@@ -1,10 +1,10 @@
 
 nav {
-    background-color: #333;
+    background-color:black;
   }
   
   ul {
-    list-style: none;
+    list-style:none;
     padding: 0;
     margin: 0;
     display: flex;
@@ -23,6 +23,6 @@ nav {
   }
   
   a:hover {
-    background-color: #555;
+    background-color: green;
   }
   
