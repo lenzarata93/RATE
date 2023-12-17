@@ -1,7 +1,9 @@
 import Navigation from "./components/Navigation";
 import Login from "./components/usersComponents/Login";
 import Moves from "./components/usersComponents/Moves";
+import Profile from "./components/usersComponents/Profile";
 import Registration from "./components/usersComponents/Registration";
+import Stat from "./components/usersComponents/Stat";
 
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
    <Registration />
    <Login />
    <Moves />
+   <Profile />
+   <Stat />
    </div>
   )
     
