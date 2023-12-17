@@ -1,4 +1,5 @@
 import Navigation from "./components/Navigation";
+import Login from "./components/usersComponents/Login";
 import Registration from "./components/usersComponents/Registration";
 
 
@@ -9,6 +10,7 @@ function App() {
     <div id="page">
    <Navigation />
    <Registration />
+   <Login />
    </div>
   )
     
