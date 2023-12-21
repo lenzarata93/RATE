@@ -1,32 +1,61 @@
+import { useState } from "react";
 import styles from "../usersComponents/Registration.module.css"
 
 export default function Registration(){
+
+const [registerValues,setRegisterValues]=useState({
+  username : '',
+  email : '',
+  password : '',
+  repeatPassword : '',
+  birthdate : '',
+  gender : ''
+
+
+  
+})
+
     return(
 <form className="register-form">
 
   <div>
     <label htmlFor="username">Потребителско име:</label>
-    <input type="text" id="username" name="username" required/>
+    <input type="text"
+    id="username"
+    name="username"
+    value={registerValues.username}/>
   </div>
 
   <div>
     <label htmlFor="email">Имейл:</label>
-    <input type="email" id="email" name="email" required/>
+    <input type="email"
+    id="email"
+    name="email"
+    value={registerValues.email}/>
   </div>
 
   <div>
     <label htmlFor="password">Парола:</label>
-    <input type="password" id="password" name="password" required/>
+    <input type="password"
+    id="password"
+    name="password"
+    value={registerValues.password}/>
   </div>
 
   <div>
-    <label htmlFor="repeat-password">Повтори парола:</label>
-    <input type="repeat-password" id="repeat-password" name="repeat-password" required/>
+    <label htmlFor="repeatPassword">Повтори парола:</label>
+    <input type="repeatPassword"
+    id="repeatPassword"
+    name="repeatPassword"
+    value={registerValues.repeatPassword}/>
   </div>
 
   <div>
     <label htmlFor="birthdate">Дата на раждане:</label>
-    <input type="date" id="birthdate" name="birthdate" required/>
+    <input type="date"
+    id="birthdate"
+    name="birthdate"
+    value={registerValues.birthdate}/>
   </div>
 
   <div>
