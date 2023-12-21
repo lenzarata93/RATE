@@ -3,12 +3,12 @@ export default function Login(){
     return(  
       <form className="login-form">
   <div className='login'>
-    <label for="username">Потребителско име:</label>
+    <label htmlFor="username">Потребителско име:</label>
     <input type="text" id="username" name="username" required/>
   </div>
   
   <div>
-    <label for="password">Парола:</label>
+    <label htmlFor="password">Парола:</label>
     <input type="password" id="password" name="password" required/>
   </div>
   
