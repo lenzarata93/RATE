@@ -1,17 +1,32 @@
+import { useState } from 'react';
 import styles from './Moves.module.css'
 
 export default function Moves(){
+
+  const [amount,setAmount] = useState('')
+const depositHandler =(e)=>{
+console.log('deposit clicked')
+};
+const withdrawHandler = (e) =>{
+  console.log('withdraw clicked')
+};
+
+const amountChangeHanler = (e) =>{
+  setAmount(Number(e.target.value))
+
+}
+
     return(
         <form>
   <div>
     <label htmlFor="amount">Сума:</label>
-    <input type="number" id="amount" name="amount" step="1.00" required/>
+    <input type="number" id="amount" name="amount" step="1.00" defaultValue={amount} onChange={amountChangeHanler}/>
   </div>
 
   <div>
     <label  htmlFor="transactionType" >Тип на транзакцията:</label>
-    <button className={styles.deposit}>Депозит</button>
-    <button className={styles.withdraw}>Теглене</button>
+    <button className={styles.deposit} onClick={depositHandler}>Депозит</button>
+    <button className={styles.withdraw} onClick={withdrawHandler}>Теглене</button>
   </div>
 
   <div>
