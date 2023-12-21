@@ -1,17 +1,17 @@
+import styles from './Moves.module.css'
+
 export default function Moves(){
     return(
         <form>
   <div>
     <label htmlFor="amount">Сума:</label>
-    <input type="number" id="amount" name="amount" step="0.01" required/>
+    <input type="number" id="amount" name="amount" step="1.00" required/>
   </div>
 
   <div>
-    <label htmlFor="transactionType">Тип на транзакцията:</label>
-    <select id="transactionType" name="transactionType">
-      <option value="deposit">Депозит</option>
-      <option value="withdrawal">Теглене</option>
-    </select>
+    <label  htmlFor="transactionType" >Тип на транзакцията:</label>
+    <button className={styles.deposit}>Депозит</button>
+    <button className={styles.withdraw}>Теглене</button>
   </div>
 
   <div>

@@ -1,0 +1,9 @@
+button.withdraw {
+    color: white;
+    background-color: green;
+}
+
+button.deposit {
+    background-color: red;
+    color: white;
+}
