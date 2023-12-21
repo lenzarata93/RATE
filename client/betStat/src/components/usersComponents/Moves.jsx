@@ -2,12 +2,12 @@ export default function Moves(){
     return(
         <form>
   <div>
-    <label for="amount">Сума:</label>
+    <label htmlFor="amount">Сума:</label>
     <input type="number" id="amount" name="amount" step="0.01" required/>
   </div>
 
   <div>
-    <label for="transactionType">Тип на транзакцията:</label>
+    <label htmlFor="transactionType">Тип на транзакцията:</label>
     <select id="transactionType" name="transactionType">
       <option value="deposit">Депозит</option>
       <option value="withdrawal">Теглене</option>
@@ -15,7 +15,7 @@ export default function Moves(){
   </div>
 
   <div>
-    <label for="provider">Доставчик:</label>
+    <label htmlFor="provider">Доставчик:</label>
     <select id="provider" name="provider">
       <option value="winbet">WinBet </option>
       <option value="efbet">Efbet </option>
