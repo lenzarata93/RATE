@@ -9,21 +9,38 @@ const [registerValues,setRegisterValues]=useState({
   password : '',
   repeatPassword : '',
   birthdate : '',
-  gender : ''
+
 
 
   
-})
+});
+
+const changeRegisterHandler = (e) =>{
+setRegisterValues(state=>({
+  ...state,
+  [e.target.name] : e.target.value
+}));
+
+
+
+};
+
+const registerHandler =(e)=>{
+  e.preventDefault();
+  console.log(registerValues)
+}
 
     return(
-<form className="register-form">
+<form className="register-form" onSubmit={registerHandler}>
 
   <div>
     <label htmlFor="username">Потребителско име:</label>
     <input type="text"
     id="username"
     name="username"
-    value={registerValues.username}/>
+    value={registerValues.username}
+    onChange={changeRegisterHandler}/>
+    
   </div>
 
   <div>
@@ -31,7 +48,8 @@ const [registerValues,setRegisterValues]=useState({
     <input type="email"
     id="email"
     name="email"
-    value={registerValues.email}/>
+    value={registerValues.email}
+    onChange={changeRegisterHandler}/>
   </div>
 
   <div>
@@ -39,7 +57,8 @@ const [registerValues,setRegisterValues]=useState({
     <input type="password"
     id="password"
     name="password"
-    value={registerValues.password}/>
+    value={registerValues.password}
+    onChange={changeRegisterHandler}/>
   </div>
 
   <div>
@@ -47,7 +66,8 @@ const [registerValues,setRegisterValues]=useState({
     <input type="repeatPassword"
     id="repeatPassword"
     name="repeatPassword"
-    value={registerValues.repeatPassword}/>
+    value={registerValues.repeatPassword}
+    onChange={changeRegisterHandler}/>
   </div>
 
   <div>
@@ -55,7 +75,8 @@ const [registerValues,setRegisterValues]=useState({
     <input type="date"
     id="birthdate"
     name="birthdate"
-    value={registerValues.birthdate}/>
+    value={registerValues.birthdate}
+    onChange={changeRegisterHandler}/>
   </div>
 
   <div>
