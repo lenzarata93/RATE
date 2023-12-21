@@ -1,6 +1,8 @@
+import styles from "../usersComponents/Registration.module.css"
+
 export default function Registration(){
     return(
-<form>
+<form className="register-form">
 
   <div>
     <label for="username">Потребителско име:</label>
