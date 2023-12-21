@@ -3,24 +3,41 @@ import styles from './Moves.module.css'
 
 export default function Moves(){
 
-  const [amount,setAmount] = useState('')
+  const [transaction,setTransaction] = useState({
+    amount : '',
+    provider : ''
+  })
 const depositHandler =(e)=>{
-console.log('deposit clicked')
+  e.preventDefault();
+console.log('deposit clicked');
+clearField();
 };
 const withdrawHandler = (e) =>{
-  console.log('withdraw clicked')
+  e.preventDefault();
+  console.log('withdraw clicked');
+  clearField();
 };
 
-const amountChangeHanler = (e) =>{
-  setAmount(Number(e.target.value))
+const transactionChangeHandler = (e) =>{
+  setTransaction(state =>({
+    ...state,
+    [e.target.name] : e.target.value
+  }))
 
+};
+
+const clearField = ()=>{
+  setTransaction({
+    amount : '',
+    provider : ''
+  });
 }
 
     return(
         <form>
   <div>
     <label htmlFor="amount">Сума:</label>
-    <input type="number" id="amount" name="amount" step="1.00" defaultValue={amount} onChange={amountChangeHanler}/>
+    <input type="number" id="amount" name="amount" step="1.00" value={transaction.amount} onChange={transactionChangeHandler}/>
   </div>
 
   <div>
@@ -31,7 +48,7 @@ const amountChangeHanler = (e) =>{
 
   <div>
     <label htmlFor="provider">Доставчик:</label>
-    <select id="provider" name="provider">
+    <select id="provider" name="provider" onChange={transactionChangeHandler}>
       <option value="winbet">WinBet </option>
       <option value="efbet">Efbet </option>
       <option value="palmsbet">PalmsBet</option>

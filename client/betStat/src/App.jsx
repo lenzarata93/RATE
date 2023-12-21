@@ -1,3 +1,4 @@
+import NotFound from "./components/404";
 import Navigation from "./components/Navigation";
 import Login from "./components/usersComponents/Login";
 import Moves from "./components/usersComponents/Moves";
@@ -17,6 +18,7 @@ function App() {
    <Moves />
    <Profile />
    <Stat />
+   <NotFound />
    </div>
   )
     
