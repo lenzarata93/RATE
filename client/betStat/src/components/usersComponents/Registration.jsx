@@ -63,7 +63,7 @@ const registerHandler =(e)=>{
 
   <div>
     <label htmlFor="repeatPassword">Повтори парола:</label>
-    <input type="repeatPassword"
+    <input type="password"
     id="repeatPassword"
     name="repeatPassword"
     value={registerValues.repeatPassword}
@@ -93,4 +93,5 @@ const registerHandler =(e)=>{
 
 
     );
+    
 }

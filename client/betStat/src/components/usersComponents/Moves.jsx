@@ -5,16 +5,20 @@ export default function Moves(){
 
   const [transaction,setTransaction] = useState({
     amount : '',
-    provider : ''
+    provider : 'choose'
   })
 const depositHandler =(e)=>{
   e.preventDefault();
+  console.log(`Deposit : ${transaction.amount} лв.`);
+  console.log(`Provider is ${transaction.provider}`)
 console.log('deposit clicked');
 clearField();
 };
 const withdrawHandler = (e) =>{
   e.preventDefault();
   console.log('withdraw clicked');
+  console.log(`Withdraw : ${transaction.amount} лв.`);
+  console.log(`Provider is ${transaction.provider}`)
   clearField();
 };
 
@@ -29,7 +33,7 @@ const transactionChangeHandler = (e) =>{
 const clearField = ()=>{
   setTransaction({
     amount : '',
-    provider : ''
+    provider : 'choose'
   });
 }
 
@@ -48,7 +52,8 @@ const clearField = ()=>{
 
   <div>
     <label htmlFor="provider">Доставчик:</label>
-    <select id="provider" name="provider" onChange={transactionChangeHandler}>
+    <select id="provider" name="provider" onChange={transactionChangeHandler} value={transaction.provider}>
+    <option value="choose">Избери доставчик </option>
       <option value="winbet">WinBet </option>
       <option value="efbet">Efbet </option>
       <option value="palmsbet">PalmsBet</option>
