@@ -14,7 +14,7 @@ try {
     })
    
 
-    console.log(res)
+   
     if(res.ok){
         const data = await res.json();
         console.log(`Потребителят е успешно регистриран.`);

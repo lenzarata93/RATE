@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "../usersComponents/Registration.module.css"
 import { userRegistration } from "../../API/usersAPI";
+import { regValidation } from "../../Validate/registrationValidate";
 
 
 export default function Registration(){
@@ -31,9 +32,12 @@ setRegisterValues(state=>({
 
 const registerHandler = async(e)=>{
   e.preventDefault();
+  
   console.log(registerValues);
-  const user =  await userRegistration(registerValues);
-  console.log(`RETURNING USER IS ${user.username}`);
+  const user = await regValidation(registerValues);
+  console.log(`AFTER VALIDATE USER : ${user.email}`)
+  await userRegistration(user);
+  //console.log(`RETURNING USER IS ${user.username}`);
 
 }
 

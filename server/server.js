@@ -5,6 +5,8 @@ const app = express();
 const cors = require('cors');
 const PORT = 4000;
 const bodyParser = require('body-parser');
+const User = require('./DataBase/Models/userModel');
+const { hashPassword } = require('./utils/hashPass');
 
 dataBaseConnect()
 .then(()=>{
@@ -38,11 +40,19 @@ app.post('/register', async(req,res)=>{
    try {
     console.log(`В заявка за регистрация си`)
     const user = req.body;
-    console.log(user)
+    console.log(`BEFORE HASH` )
+    console.log(user.username)
+    const hashPass = await hashPassword(user.password);
+    const { repeatPassword, ...userDataWithoutRepeatPassword } = user;
+    const userData = { ...userDataWithoutRepeatPassword, password: hashPass };
+    console.log(`BEFORE PUT IN DB USER : ${userData}`)
+    await User.create(userData)
+   console.log(`NEW USER IS HERE : ${newUser}`)
+    return newUser;
    } catch (error) {
     
    } 
-   //return user;
+  
     
 })
 app.get('/', (req, res) => {
