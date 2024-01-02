@@ -3,14 +3,16 @@ const baseUrl = 'http://localhost:4000'
 export const userRegistration = async(userData)=>{
     console.log(`UserREGISTRATION DATA IS : ${userData.email}`)
 try {
-    const res = await fetch(`${baseUrl}/register`,{
+    const res = await fetch (`${baseUrl}/register`,{
         method : 'POST',
         headers :{
             'Content-Type' : 'application/json',
+           // 'Access-Control-Allow-Origin' : '*'
             
         },
         body : JSON.stringify(userData),
-    });
+    })
+   
 
     console.log(res)
     if(res.ok){

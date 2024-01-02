@@ -4,6 +4,7 @@ const dataBaseConnect = require('./DataBase/dataBase');
 const app = express();
 const cors = require('cors');
 const PORT = 4000;
+const bodyParser = require('body-parser');
 
 dataBaseConnect()
 .then(()=>{
@@ -24,8 +25,8 @@ const corsOptions = {
   };
 
 app.use(cors(corsOptions))
-app.use(express.json());
-app.use(express.urlencoded({extended:false}));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
   
@@ -41,7 +42,7 @@ app.post('/register', async(req,res)=>{
    } catch (error) {
     
    } 
-   return user;
+   //return user;
     
 })
 app.get('/', (req, res) => {

@@ -33,7 +33,7 @@ const registerHandler = async(e)=>{
   e.preventDefault();
   console.log(registerValues);
   const user =  await userRegistration(registerValues);
-  console.log(`RETURNING USER IS ${user}`);
+  console.log(`RETURNING USER IS ${user.username}`);
 
 }
 
