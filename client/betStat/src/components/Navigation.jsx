@@ -1,14 +1,16 @@
-import styles from '../components/Navigation.module.css'
+import styles from '../components/Navigation.module.css';
+
+import { Link} from 'react-router-dom';
 function Navigation(){
     return( <nav>
         <ul>
-          <li><a href="/">Начало</a></li>
-          <li><a href="/registration">Регистрация</a></li>
-          <li><a href="/login">Вход</a></li>
-          <li><a href="/logout">Изход</a></li>
-          <li><a href="/moves">Движения</a></li>
-          <li><a href="/myProfile">Моят профил</a></li>
-          <li><a href="/myStat">Моята статистика</a></li>
+          <li><Link to="/">Начало</Link></li>
+          <li><Link to ="/registration">Регистрация</Link></li>
+          <li><Link to="/login">Вход</Link></li>
+          <li><Link to="/logout">Изход</Link></li>
+          <li><Link to="/moves">Движения</Link></li>
+          <li><Link to="/myProfile">Моят профил</Link></li>
+          <li><Link to="/myStat">Моята статистика</Link></li>
         </ul>
       </nav>
     );
