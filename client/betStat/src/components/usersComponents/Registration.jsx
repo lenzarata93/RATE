@@ -1,7 +1,10 @@
 import { useState } from "react";
 import styles from "../usersComponents/Registration.module.css"
+import { userRegistration } from "../../API/usersAPI";
+
 
 export default function Registration(){
+
 
 const [registerValues,setRegisterValues]=useState({
   username : '',
@@ -9,6 +12,7 @@ const [registerValues,setRegisterValues]=useState({
   password : '',
   repeatPassword : '',
   birthdate : '',
+  gender : '',
 
 
 
@@ -25,9 +29,12 @@ setRegisterValues(state=>({
 
 };
 
-const registerHandler =(e)=>{
+const registerHandler = async(e)=>{
   e.preventDefault();
-  console.log(registerValues)
+  console.log(registerValues);
+  const user =  await userRegistration(registerValues);
+  console.log(`RETURNING USER IS ${user}`);
+
 }
 
     return(
@@ -81,7 +88,7 @@ const registerHandler =(e)=>{
 
   <div>
     <label htmlFor="gender">Пол:</label>
-    <select id="gender" name="gender">
+    <select id="gender" name="gender" onChange={changeRegisterHandler}>
       <option value="">Изберете пол</option>
       <option value="male">Мъж</option>
       <option value="female">Жена</option>
