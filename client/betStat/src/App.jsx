@@ -8,6 +8,8 @@ import Moves from "./components/usersComponents/Moves";
 import Profile from "./components/usersComponents/Profile";
 import Registration from "./components/usersComponents/Registration";
 import Stat from "./components/usersComponents/Stat";
+import Home from './components/usersComponents/Home';
+import LogOut from './components/usersComponents/LogOut';
 
 
 function App() {
@@ -17,9 +19,10 @@ function App() {
     <div id="page">
    <Navigation />
    <Routes>
+    <Route path='/' element={<Home/>} />
     <Route  path='/registration' element={<Registration />} />
     <Route path='/login' element={<Login />} />
-    <Route path='/logout' />
+    <Route path='/logout' element ={<LogOut />}/>
     <Route path='/moves' element={ <Moves />} />
     <Route path='/myProfile' element ={<Profile />} />
     <Route path='/myStat' element ={ <Stat />} />
