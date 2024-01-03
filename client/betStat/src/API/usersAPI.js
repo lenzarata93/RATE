@@ -15,7 +15,7 @@ try {
    
 
    
-    if(res.ok){
+    if(res.status ===200){
         const data = await res.json();
         console.log(`Потребителят е успешно регистриран.`);
         console.log(`DATA is : ${data.username}`)

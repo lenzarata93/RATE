@@ -49,7 +49,8 @@ app.post('/register', async(req,res)=>{
     console.log(`BEFORE PUT IN DB USER : ${userData}`)
    const newUser = await User.create(userData)
    console.log(`NEW USER IS HERE : ${newUser}`)
-    return newUser;
+    res.status(200).json({newUser})
+
    } catch (error) {
     
    } 
