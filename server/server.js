@@ -43,10 +43,11 @@ app.post('/register', async(req,res)=>{
     console.log(`BEFORE HASH` )
     console.log(user.username)
     const hashPass = await hashPassword(user.password);
-    const { repeatPassword, ...userDataWithoutRepeatPassword } = user;
-    const userData = { ...userDataWithoutRepeatPassword, password: hashPass };
+    //const { repeatPassword, ...userDataWithoutRepeatPassword } = user;
+    const userData = { ...user, password: hashPass,repeatPassword: hashPass };
+    console.log(`hasspass is ${hashPass}`)
     console.log(`BEFORE PUT IN DB USER : ${userData}`)
-    await User.create(userData)
+   const newUser = await User.create(userData)
    console.log(`NEW USER IS HERE : ${newUser}`)
     return newUser;
    } catch (error) {
