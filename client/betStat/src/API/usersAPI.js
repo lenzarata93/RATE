@@ -16,9 +16,11 @@ try {
 
    
     if(res.status ===200){
-        const data = await res.json();
+        const user = await res.json();
         console.log(`Потребителят е успешно регистриран.`);
-        console.log(`DATA is : ${JSON.stringify(data)}`)
+        console.log(`DATA is : ${JSON.stringify(user)}`)
+        //const user = JSON.stringify(data);
+        console.log(`User is : ${user.username}`)
         //return data;
 
     }else{
