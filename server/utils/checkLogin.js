@@ -2,6 +2,7 @@ const User= require('../DataBase/Models/userModel');
 const bcrypt = require('bcrypt');
 
 const mongoose = require('mongoose');
+const  {generateToken} = require('./generateWebToken')
 
  const checkLogin =async (loginData)=>{
     //console.log(req.body.username)
@@ -18,10 +19,19 @@ if (!matchPass){
     throw new Error ('Wrong PASSWORD')
 };
 
-return haveUser;
+//return haveUser;
     } catch (error) {
         throw new Error (error)
     }
+
+    console.log('before generate')
+ const token = await generateToken(haveUser);
+
+
+ console.log(`TOKEN IS :${token}`)
+ return token
+ 
+
 
 
 };

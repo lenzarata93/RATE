@@ -78,7 +78,8 @@ try {
 
 } catch (error) {
     console.error(error);
-}
+};
+ 
 
 });
 app.get('/', (req, res) => {
