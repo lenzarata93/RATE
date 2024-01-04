@@ -71,10 +71,13 @@ try {
 
     
     const user = await checkLogin(data);
-
     console.log(user);
+   // if(user ===null){
+     //   throw new Error('SOMETHING WAS WRONG WITH LOGIN')
+    //}
+
 } catch (error) {
-    //alert (error.message);
+    console.error(error);
 }
 
 });
