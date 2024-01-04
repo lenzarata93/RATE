@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../usersComponents/Login.module.css"
+import { loginUser } from "../../API/usersAPI";
 
 
 
@@ -21,10 +22,12 @@ export default function Login(){
       username:'',
       password: ''})
   }
-  const onSubmitLoginHandler = (e)=>{
+  const onSubmitLoginHandler = async(e)=>{
     e.preventDefault();
     console.log(loginValues);
-    clearValues();
+   const user= await loginUser(loginValues.username,loginValues.password)
+    //clearValues();
+    console.log(user)
   }
 
 

@@ -7,6 +7,7 @@ const PORT = 4000;
 const bodyParser = require('body-parser');
 const User = require('./DataBase/Models/userModel');
 const { hashPassword } = require('./utils/hashPass');
+const { checkLogin } = require('./utils/checkLogin');
 
 dataBaseConnect()
 .then(()=>{
@@ -56,7 +57,27 @@ app.post('/register', async(req,res)=>{
    } 
   
     
-})
+});
+
+app.post('/login',async (req,res)=>{
+    console.log(`server login`);
+    const data = req.body;
+    console.log(data)
+try {
+    if(!data){
+        throw new Error ('WRONG DATA OR MISSING')
+    };
+
+
+    
+    const user = await checkLogin(data);
+
+    console.log(user);
+} catch (error) {
+    //alert (error.message);
+}
+
+});
 app.get('/', (req, res) => {
     res.send('Добре дошли във вашия сървър!');
   });
