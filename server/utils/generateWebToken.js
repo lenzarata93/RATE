@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken');
 const util = require('util')
 const { SECRET } = require('./secret');
 
-async function generateToken(user) {
+const generateToken=async(user)=>{
     console.log(`generating token`)
     const payload = {
         username: user.username,

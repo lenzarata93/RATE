@@ -71,7 +71,7 @@ try {
 
     
     const user = await checkLogin(data);
-    console.log(user);
+    console.log(`AFTER CHECK USER USER IS : ${user}`);
    // if(user ===null){
      //   throw new Error('SOMETHING WAS WRONG WITH LOGIN')
     //}
