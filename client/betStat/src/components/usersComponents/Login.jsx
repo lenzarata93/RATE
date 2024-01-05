@@ -25,9 +25,9 @@ export default function Login(){
   const onSubmitLoginHandler = async(e)=>{
     e.preventDefault();
     console.log(loginValues);
-   const user= await loginUser(loginValues.username,loginValues.password)
+   const token= await loginUser(loginValues.username,loginValues.password)
     //clearValues();
-    console.log(user)
+    console.log(`LOGIN JSX TOKEN IS : ${token}`)
   }
 
 

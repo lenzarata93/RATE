@@ -34,14 +34,26 @@ return userData
 };
 
 export const loginUser = async (username,password) =>{
-const res = await fetch (`${baseUrl}/login`,{
-    method : 'POST',
-    headers :{
-        'Content-Type' : 'application/json'
-    },
-    body : JSON.stringify({username,password})
+    try {
+        const res = await fetch (`${baseUrl}/login`,{
+            method : 'POST',
+            headers :{
+                'Content-Type' : 'application/json'
+            },
+            body : JSON.stringify({username,password})
+        
+        });
 
-});
+        const data = await res.json();
+        const token = data.token;
+        console.log(`USER API TOKEN IS : ${token}`)
+        return(token)
+
+        
+    } catch (error) {
+        
+    }
+
 
 
 };

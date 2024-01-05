@@ -75,6 +75,7 @@ try {
    // if(user ===null){
      //   throw new Error('SOMETHING WAS WRONG WITH LOGIN')
     //}
+    res.json({token:user})
 
 } catch (error) {
     console.error(error);
