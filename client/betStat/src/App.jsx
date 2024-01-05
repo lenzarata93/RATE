@@ -10,15 +10,16 @@ import Registration from "./components/usersComponents/Registration";
 import Stat from "./components/usersComponents/Stat";
 import Home from './components/usersComponents/Home';
 import LogOut from './components/usersComponents/LogOut';
-import { useContext, useState } from 'react';
-import { userContext } from './contexts/tokenContext';
+import { useState } from 'react';
+import { userContext } from './contexts/userContext';
 
 
 function App() {
-  const [user,setUser] = useState({});
+  const [user,setUser] = useState('');
+  const [token,setToken]=useState('');
 
   return (
-    <userContext.Provider value={{user,setUser}}>
+    <userContext.Provider value={{user,setUser,token,setToken}}>
     <div id="page">
    <Navigation />
    <Routes>

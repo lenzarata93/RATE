@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import styles from "../usersComponents/Login.module.css"
 import { loginUser } from "../../API/usersAPI";
+import { userContext } from "../../contexts/userContext";
 
 
 
 export default function Login(){
-
+//const context = useContext(userContext);
+  const { setToken } = useContext(userContext)
   const [loginValues,setLoginValues]= useState({
     username : '',
     password : '',
   });
-
+  
   const changeLoginValuesHandler = (e)=>{
     setLoginValues(state=>({
       ...state,
@@ -21,13 +23,17 @@ export default function Login(){
     setLoginValues({
       username:'',
       password: ''})
-  }
-  const onSubmitLoginHandler = async(e)=>{
-    e.preventDefault();
+    }
+    const onSubmitLoginHandler = async(e)=>{
+      e.preventDefault();
+  
     console.log(loginValues);
-   const token= await loginUser(loginValues.username,loginValues.password)
+   const token= await loginUser(loginValues.username,loginValues.password);
     //clearValues();
-    console.log(`LOGIN JSX TOKEN IS : ${token}`)
+    console.log(`LOGIN JSX TOKEN IS : ${token}`);
+    setToken(token);
+    
+    
   }
 
 
