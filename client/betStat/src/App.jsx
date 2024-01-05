@@ -10,12 +10,15 @@ import Registration from "./components/usersComponents/Registration";
 import Stat from "./components/usersComponents/Stat";
 import Home from './components/usersComponents/Home';
 import LogOut from './components/usersComponents/LogOut';
+import { useContext, useState } from 'react';
+import { userContext } from './contexts/tokenContext';
 
 
 function App() {
-  
+  const [user,setUser] = useState({});
 
   return (
+    <userContext.Provider value={{user,setUser}}>
     <div id="page">
    <Navigation />
    <Routes>
@@ -30,6 +33,7 @@ function App() {
    </Routes>
    
    </div>
+   </userContext.Provider>
   )
     
   
