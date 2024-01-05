@@ -17,6 +17,7 @@ import { userContext } from './contexts/userContext';
 function App() {
   const [user,setUser] = useState('');
   const [token,setToken]=useState('');
+  console.log(`TOken is :${token}`)
 
   return (
     <userContext.Provider value={{user,setUser,token,setToken}}>

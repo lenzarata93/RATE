@@ -5,9 +5,12 @@ import { userContext } from "../../contexts/userContext";
 
 
 
+
+
 export default function Login(){
 //const context = useContext(userContext);
-  const { setToken } = useContext(userContext)
+  const { setToken } = useContext(userContext);
+  const {setUser}=useContext(userContext)
   const [loginValues,setLoginValues]= useState({
     username : '',
     password : '',
@@ -32,6 +35,10 @@ export default function Login(){
     //clearValues();
     console.log(`LOGIN JSX TOKEN IS : ${token}`);
     setToken(token);
+
+    //const user =await getUserData(token);
+    //console.log(`AFTER DECODING USER IS :${user}`)
+      //setUser(user)
     
     
   }

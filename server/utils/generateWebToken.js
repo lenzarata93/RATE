@@ -14,7 +14,7 @@ const generateToken=async(user)=>{
     //const token = await util.promisify(jwt.sign(payload, SECRET, { expiresIn: '1d' }));
     const signAsync = util.promisify(jwt.sign);
     const token =await signAsync(payload, SECRET, { expiresIn: '1d' })
-    return token;
+    return (token);
 }
 
 module.exports = {generateToken};
