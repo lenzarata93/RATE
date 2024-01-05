@@ -1,3 +1,2 @@
 const SECRET = '1993MARIO1985ANA2020CONSTANTINE';
-
-module.exports = SECRET;
+module.exports = {SECRET}

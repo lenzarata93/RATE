@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const  {generateToken} = require('./generateWebToken')
 
  const checkLogin =async (loginData)=>{
-    let haveUser;
+   // let haveUser;
     //console.log(req.body.username)
     console.log(`check login`)
     try {
@@ -30,7 +30,7 @@ console.log(`HAVEUSER IS :${haveUser}`)
 
 
  console.log(`TOKEN IS :${token}`)
- //return token
+ return token
  
 
 
