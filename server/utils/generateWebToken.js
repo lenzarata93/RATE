@@ -4,6 +4,8 @@ const { SECRET } = require('./secret');
 
 const generateToken=async(user)=>{
     console.log(`generating token`)
+    console.log(`user is : ${user.username}`);
+    console.log(`useeID is : ${user._id}`)
     const payload = {
         username: user.username,
         email: user.email,
