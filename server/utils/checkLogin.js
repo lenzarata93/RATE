@@ -26,11 +26,11 @@ console.log(`HAVEUSER IS :${haveUser}`)
     }
 
     console.log('before generate')
- const userData = await generateToken(haveUser);
+ const token = await generateToken(haveUser);
 
 
  console.log(`TOKEN IS :${token}`)
- return userData
+ return token
  
 
 

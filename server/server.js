@@ -69,13 +69,13 @@ try {
     };
 
 
-    
-    const user = await checkLogin(data);
-    console.log(`AFTER CHECK USER USER IS : ${user}`);
+    console.log(`BEFORE CHECK USER USER IS : ${data.username}`);
+    const token = await checkLogin(data);
+    console.log(`AFTER CHECK USER USER IS : ${token}`);
    // if(user ===null){
      //   throw new Error('SOMETHING WAS WRONG WITH LOGIN')
     //}
-    res.json({token:user})
+    res.json({token})
 
 } catch (error) {
     console.error(error);

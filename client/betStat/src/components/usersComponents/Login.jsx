@@ -34,8 +34,18 @@ export default function Login(){
    const token= await loginUser(loginValues.username,loginValues.password);
     //clearValues();
     console.log(`LOGIN JSX TOKEN IS : ${token}`);
-    setToken(token);
+    try {
+      if(token){
+        setToken(token);
+        setUser(loginValues.username);
 
+      }else{
+        throw new Error(`Wrong USERNAME OR PASSWORD`)
+      }
+    } catch(err) {
+      console.error(err)
+    }
+    
     //const user =await getUserData(token);
     //console.log(`AFTER DECODING USER IS :${user}`)
       //setUser(user)
