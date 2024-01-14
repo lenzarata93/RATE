@@ -17,7 +17,9 @@ function Navigation(){
           <li><Link to ="/registration">Регистрация</Link></li>
           <li><Link to="/login">Вход</Link></li>
           </>)
+          
           }
+          <li><Link to="/about">Идеята ни</Link></li>
         
          
         </ul>

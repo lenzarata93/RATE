@@ -34,6 +34,10 @@ export default function Login(){
    const token= await loginUser(loginValues.username,loginValues.password);
     //clearValues();
     console.log(`LOGIN JSX TOKEN IS : ${token}`);
+    setLoginValues({
+      username: '',
+      password : '',
+    })
     try {
       if(token){
         setToken(token);
