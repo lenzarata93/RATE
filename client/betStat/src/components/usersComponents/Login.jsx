@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import styles from "../usersComponents/Login.module.css"
 import { loginUser } from "../../API/usersAPI";
 import { userContext } from "../../contexts/userContext";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -9,6 +10,7 @@ import { userContext } from "../../contexts/userContext";
 
 export default function Login(){
 //const context = useContext(userContext);
+  const navigate =useNavigate();
   const { setToken } = useContext(userContext);
   const {setUser}=useContext(userContext)
   const [loginValues,setLoginValues]= useState({
@@ -43,6 +45,8 @@ export default function Login(){
         setToken(token);
         setUser(loginValues.username);
         localStorage.setItem('token',token);
+        navigate('/')
+
 
       }else{
         localStorage.removeItem('token');

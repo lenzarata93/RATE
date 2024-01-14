@@ -1,3 +1,3 @@
 export default function Home(){
-    return(<h1>ДОБРЕ ДОШЛИ В СВЕТА НА КАЗИНО СТАТИСТИКАТА!</h1>)
+    return(<h2><center>ДОБРЕ ДОШЛИ В СВЕТА НА КАЗИНО СТАТИСТИКАТА!</center></h2>)
 };
