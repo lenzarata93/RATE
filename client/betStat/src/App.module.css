@@ -1,0 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://cdn.gencraft.com/prod/user/81155f6b-be35-46f0-a781-3ad20906db59/2b926557-49b2-431d-bd01-4efbdbc5a40c/image/image1_0.jpg?Expires=1705318349&Signature=JJoEfxih4zFq0ZSnhi-KhQZGctvNVyt5RcvncHCTNox9KOb3xKD5mYP6Ydq51Ydv2lCDiyB8SOutDRDg3WPaiu~b~7IcyCusw8ZafM0fqmIHP0l6zcsQCjoucuYdeVg~gKI~JYrKZtch~Yxxx-JNbvdmDdo6s9CGKAuw6uScUf6QLfqr~YqFOlMMRUb31PqdM69GlvWjy-4Z2nKeSsH2xroz2nDobv-mKBNdsOhmilC6TY8E10dusqgG79zDB6LK1lTBvE8cJEc-63RfxMWHqIIj4rY6AU-wokuhUGpXl02ZLnfVhTZ0qFCEJLYY8oVlYlFeu~xPLdJe6fH-9PVDHg__&Key-Pair-Id=K3RDDB1TZ8BHT8');
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100vh; /* Настройте на 100% от височината на прозореца */
+    overflow: hidden; /* Премахва скрол баровете, ако има такива */
+  }

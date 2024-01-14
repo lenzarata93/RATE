@@ -12,6 +12,7 @@ import Home from './components/usersComponents/Home';
 import LogOut from './components/usersComponents/LogOut';
 import { useState } from 'react';
 import { userContext } from './contexts/userContext';
+import styles from '../src/App.module.css' 
 
 
 function App() {

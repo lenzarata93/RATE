@@ -43,13 +43,6 @@ const clearField = ()=>{
     <label htmlFor="amount">Сума:</label>
     <input type="number" id="amount" name="amount" step="1.00" value={transaction.amount} onChange={transactionChangeHandler}/>
   </div>
-
-  <div>
-    <label  htmlFor="transactionType" >Тип на транзакцията:</label>
-    <button className={styles.deposit} onClick={depositHandler}>Депозит</button>
-    <button className={styles.withdraw} onClick={withdrawHandler}>Теглене</button>
-  </div>
-
   <div>
     <label htmlFor="provider">Доставчик:</label>
     <select id="provider" name="provider" onChange={transactionChangeHandler} value={transaction.provider}>
@@ -67,7 +60,13 @@ const clearField = ()=>{
     </select>
   </div>
 
-  <button type="submit">Изпрати</button>
+  <div>
+    <label  htmlFor="transactionType" >Тип на транзакцията:</label>
+    <button className={styles.deposit} onClick={depositHandler}>Депозит</button>
+    <button className={styles.withdraw} onClick={withdrawHandler}>Теглене</button>
+  </div>
+
+
 </form>
 
     );
