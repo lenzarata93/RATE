@@ -76,6 +76,7 @@ try {
      //   throw new Error('SOMETHING WAS WRONG WITH LOGIN')
     //}
     res.json({token})
+    
 
 } catch (error) {
     console.error(error);

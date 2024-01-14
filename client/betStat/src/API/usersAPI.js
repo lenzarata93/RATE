@@ -47,6 +47,7 @@ export const loginUser = async (username,password) =>{
         const data = await res.json();
         const token = data.token;
         console.log(`USER API TOKEN IS : ${token}`)
+        
         return(token)
 
         

@@ -38,8 +38,10 @@ export default function Login(){
       if(token){
         setToken(token);
         setUser(loginValues.username);
+        localStorage.setItem('token',token);
 
       }else{
+        localStorage.removeItem('token');
         throw new Error(`Wrong USERNAME OR PASSWORD`)
       }
     } catch(err) {
