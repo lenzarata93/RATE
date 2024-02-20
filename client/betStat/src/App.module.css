@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-image: url('https://img.freepik.com/premium-photo/winning-jackpot-luck-when-playing-casino-slot-machine_124507-45772.jpg?w=996');
-    background-size:cover;
+    background-size:auto;
     background-repeat: no-repeat;
     height: 100vh; /* Настройте на 100% от височината на прозореца */
     overflow: hidden; /* Премахва скрол баровете, ако има такива */

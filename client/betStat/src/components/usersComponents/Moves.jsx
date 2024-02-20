@@ -1,16 +1,20 @@
 import { useState } from 'react';
+import { userContext } from '../../contexts/userContext';
 import styles from './Moves.module.css'
+import deposit from '../../../../../server/utils/deposit';
 
 export default function Moves(){
+  
 
   const [transaction,setTransaction] = useState({
     amount : '',
     provider : 'choose'
   })
-const depositHandler =(e)=>{
+const depositHandler =async (e)=>{
   e.preventDefault();
   console.log(`Deposit : ${transaction.amount} лв.`);
   console.log(`Provider is ${transaction.provider}`)
+ const data = await deposit(transaction.provider,transaction.amount)
 console.log('deposit clicked');
 clearField();
 };
@@ -36,6 +40,8 @@ const clearField = ()=>{
     provider : 'choose'
   });
 }
+
+
 
     return(
         <form>
